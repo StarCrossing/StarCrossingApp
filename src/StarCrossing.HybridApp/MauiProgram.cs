@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace StarCrossing.HybridApp;
 public static class MauiProgram
@@ -13,10 +15,16 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
             });
 
+        builder.Services.AddAuthorizationCore();
+        builder.Services.AddScoped<AuthenticationStateProvider, AuthStateProvider>();
         builder.Services.AddMauiBlazorWebView();
+        builder.Services.AddDbContext<StarCrossingDbContext>(options =>
+        {
+            options.UseSqlite("Data Source=StarCrossing.db");
+        });
 
 #if DEBUG
-		builder.Services.AddBlazorWebViewDeveloperTools();
+        builder.Services.AddBlazorWebViewDeveloperTools();
 		builder.Logging.AddDebug();
 #endif
 
