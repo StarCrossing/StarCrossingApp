@@ -1,0 +1,61 @@
+@import url('fonts.css');
+
+html, body {
+    font-size: 16px;
+}
+
+html, input, textarea, select, option, button {
+    font-family: 'Quicksand',Helvetica,Arial,sans-serif;
+}
+
+h1:focus {
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-family: 'Caesar Dressing',Helvetica,Arial,sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5714em;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.67em;
+}
+
+h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.8em;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+p {
+    line-height: 1.4;
+}
+
+.monospace-numbers {
+    font-family: 'Monospace Numbers',monospace;
+    font-size: 90%;
+}
+
+a, .link {
+    color: var(--color-link);
+}
+
+@media (min-width: 640px) {
+    body {
+        font-size: 20px;
+    }
+}
