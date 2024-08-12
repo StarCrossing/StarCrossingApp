@@ -1,0 +1,81 @@
+main {
+    background: #bef;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto calc(400px + 5rem) auto;
+}
+
+.middle {
+    position: relative;
+}
+
+.clouds {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.god-and-goddess {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(100vw - 200px);
+    max-width: 400px;
+    min-width: 250px;
+}
+
+::deep form {
+    position: relative;
+    padding: 2em;
+}
+
+::deep input[type=text],
+::deep input[type=email],
+::deep input[type=password] {
+    width: calc(100% - 400px);
+    min-width: calc(320px - 4em);
+}
+
+::deep .species {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+    ::deep .species > label {
+        position: relative;
+        display: block;
+        width: 5rem;
+        opacity: 1;
+        border-radius: 0.5em;
+        background-color: #ccc;
+    }
+
+        ::deep .species > label > input {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+        }
+
+        ::deep .species > label > h4 {
+            margin: 0.5em 0 0;
+        }
+
+        ::deep .species > label > img {
+            display: block;
+            width: 5rem;
+        }
+
+::deep .buttons {
+    z-index: 1;
+    position: relative;
+}
+
+.below-clouds {
+    background-color: #fff;
+}

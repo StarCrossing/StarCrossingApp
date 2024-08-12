@@ -18,7 +18,7 @@ internal sealed class AuthStateProvider(StarCrossingDbContext dbContext) : Authe
                 _player = await dbContext.Player.SingleAsync();
             }
         }
-        catch (Exception ex)
+        catch(Exception ex)
         {
 
         }

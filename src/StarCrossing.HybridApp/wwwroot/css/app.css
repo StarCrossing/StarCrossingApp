@@ -2,6 +2,7 @@
 @import url('variables.css');
 @import url('utils.css');
 @import url('typography.css');
+@import url('animations.css');
 
 * {
     margin: 0;
@@ -34,4 +35,39 @@ html {
 body {
     background-image: url(/assets/cuniform.svg);
     min-height: 100vh;
+}
+
+input[type=text],
+input[type=number],
+input[type=email], 
+input[type=url],
+input[type=password], 
+textarea,
+select {
+    border: 0;
+    border-bottom: 2px solid var(--colors-link);
+    padding: 0.25em 0.5em;
+    width: 100%;
+}
+
+button,
+.button {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: var(--colors-link);
+    color: #eee;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.disabled,
+button[disabled],
+input[disabled] {
+    pointer-events: none;
+    filter: grayscale(0.8) contrast(0.25) brightness(1.5);
 }

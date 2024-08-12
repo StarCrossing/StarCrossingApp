@@ -1,0 +1,31 @@
+﻿@page "/register"
+
+<main>
+    <div class="sky"></div>
+    <div class="middle">
+        <img src="/assets/god-and-goddess.svg" class="god-and-goddess" alt="welcoming god & goddess" />
+        <EditForm Model="this" OnValidSubmit="Submit">
+            <p>A new god appears! Who is your prophet?</p>
+            <p>
+                <label>Name</label>
+                <InputText @bind-Value="VassalName" name="vassalName" autocomplete="off" type="text" />
+            </p>
+            <p class="species">
+               <InputRadioGroup @bind-Value="@Portrait" Name="portrait">
+                    @foreach (var p in AvailablePortraits)
+                    {
+                        <label class="@(Portrait == p ? "selected" : "")">
+                            <InputRadio Value="@p" Name="portrait" />
+                            <img src="@($"assets/vassal/portraits/human/{p}.svg")" alt="Portrait of a Human" />
+                        </label>
+                    }
+               </InputRadioGroup>
+            </p>
+            <div class="buttons">
+                <button type="submit" disabled="@(!IsValid)">Next &raquo;</button>
+            </div>
+        </EditForm>
+        <img src="/assets/clouds.svg" class="clouds" alt="heavenly clouds" />
+    </div>
+    <div class="below-clouds"></div>
+</main>

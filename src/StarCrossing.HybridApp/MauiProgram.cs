@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace StarCrossing.HybridApp;
+
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
@@ -20,8 +21,11 @@ public static class MauiProgram
         builder.Services.AddMauiBlazorWebView();
         builder.Services.AddDbContext<StarCrossingDbContext>(options =>
         {
-            options.UseSqlite("Data Source=StarCrossing.db");
+            var folder = Environment.SpecialFolder.LocalApplicationData;
+            var path = Environment.GetFolderPath(folder);
+            options.UseSqlite($"Data Source={Path.Join(path, "StarCrossing.db")}");
         });
+
 
 #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();

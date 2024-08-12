@@ -8,6 +8,10 @@ html, input, textarea, select, option, button {
     font-family: 'Quicksand',Helvetica,Arial,sans-serif;
 }
 
+p, h1, h2, h3, h4, h5, h6, ul, ol, pre, table, dl {
+    margin: 0 0 1em;
+}
+
 h1:focus {
     outline: none;
 }
@@ -52,6 +56,10 @@ p {
 
 a, .link {
     color: var(--color-link);
+}
+
+label {
+    cursor: pointer;
 }
 
 @media (min-width: 640px) {
